@@ -44,8 +44,8 @@ d_m = d*cos(theta);             % DOA-dependent phase difference term
 U = 1.8;                        % free-field wind speed [m/s]
 alpha1 = -0.125;                % experimental longitudinal decay
 alpha2 = -0.7;                  % experimental lateral decay
-alpha = alpha1*cos(theta) + ...
-    alpha2*sin(theta);          % DOA-dependent decay value
+alpha = alpha1*abs(cos(theta)) + ...
+    alpha2*abs(sin(theta));     % DOA-dependent decay value
 ww = 2*pi*Fs*(0:K/2)/K;         % angular frequency vector
 
 % Uncorrelated wind noise signals as input (not yet filtered)
